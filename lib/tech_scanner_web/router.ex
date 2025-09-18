@@ -20,8 +20,10 @@ defmodule TechScannerWeb.Router do
     get "/", PageController, :home
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", TechScannerWeb do
-  #   pipe_through :api
-  # end
+  # API routes
+  scope "/api", TechScannerWeb do
+    pipe_through :api
+
+    post "/scan", ScanController, :scan
+  end
 end
