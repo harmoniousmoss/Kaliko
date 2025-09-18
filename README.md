@@ -9,6 +9,44 @@ Kaliko is a web technology detection API built with Phoenix/Elixir that analyzes
 - RESTful API endpoint
 - JSON response format
 
+## Supported Technologies
+
+**Web Frameworks:**
+- Ruby on Rails
+- Laravel (PHP)
+- ASP.NET
+- Express.js
+- Next.js
+- Spring Framework (Java)
+
+**CMS:**
+- WordPress
+- Drupal
+- Joomla
+
+**JavaScript Libraries:**
+- React
+- jQuery
+
+**CSS Frameworks:**
+- Bootstrap
+
+**Web Servers:**
+- Nginx
+- Apache
+- Caddy
+
+**Programming Languages:**
+- PHP
+- Java
+- Go
+
+**CDN/Services:**
+- Cloudflare
+- Google APIs
+- jsDelivr
+- unpkg
+
 ## API Usage
 
 **Scan a website:**
@@ -26,13 +64,47 @@ Content-Type: application/json
 {
   "domain": "https://example.com",
   "technologies": [
-    {"name": "WordPress", "version": "6.3", "confidence": "high"},
-    {"name": "PHP", "confidence": "medium"},
-    {"name": "Apache", "confidence": "high"}
+    {"name": "WordPress", "category": "CMS", "confidence": "high"},
+    {"name": "Bootstrap", "category": "CSS framework", "confidence": "medium"},
+    {"name": "Cloudflare", "category": "CDN", "confidence": "high"}
   ],
   "scan_time": "2025-09-18T10:30:00Z"
 }
 ```
+
+## Example Tests
+
+**WordPress.com:**
+```bash
+curl -X POST http://localhost:4000/api/scan \
+  -H "Content-Type: application/json" \
+  -d '{"domain": "wordpress.com"}'
+```
+Result: WordPress + Nginx detected
+
+**Laravel.com:**
+```bash
+curl -X POST http://localhost:4000/api/scan \
+  -H "Content-Type: application/json" \
+  -d '{"domain": "laravel.com"}'
+```
+Result: Laravel + Bootstrap + Cloudflare detected
+
+**Next.js.org:**
+```bash
+curl -X POST http://localhost:4000/api/scan \
+  -H "Content-Type: application/json" \
+  -d '{"domain": "nextjs.org"}'
+```
+Result: Next.js detected
+
+**GitHub.com:**
+```bash
+curl -X POST http://localhost:4000/api/scan \
+  -H "Content-Type: application/json" \
+  -d '{"domain": "github.com"}'
+```
+Result: Bootstrap detected
 
 ## Development
 
