@@ -1,18 +1,52 @@
-# TechScanner
+# Kaliko
 
-To start your Phoenix server:
+Kaliko is a web technology detection API built with Phoenix/Elixir that analyzes websites to identify the technologies they use.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+## Features
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+- Synchronous website scanning
+- Technology detection (frameworks, libraries, servers, etc.)
+- RESTful API endpoint
+- JSON response format
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## API Usage
 
-## Learn more
+**Scan a website:**
+```bash
+POST /api/scan
+Content-Type: application/json
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+{
+  "domain": "https://example.com"
+}
+```
+
+**Response:**
+```json
+{
+  "domain": "https://example.com",
+  "technologies": [
+    {"name": "WordPress", "version": "6.3", "confidence": "high"},
+    {"name": "PHP", "confidence": "medium"},
+    {"name": "Apache", "confidence": "high"}
+  ],
+  "scan_time": "2025-09-18T10:30:00Z"
+}
+```
+
+## Development
+
+**Setup:**
+```bash
+mix deps.get
+mix phx.server
+```
+
+Visit [`localhost:4000`](http://localhost:4000) from your browser.
+
+## Tech Stack
+
+- **Phoenix** - Web framework
+- **HTTPoison** - HTTP client for website requests
+- **Floki** - HTML parsing and analysis
+- **Jason** - JSON encoding/decoding
