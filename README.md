@@ -1,4 +1,4 @@
-# Kaliko
+# Kaliko - Web technology detection API
 
 Kaliko is a web technology detection API built with Phoenix/Elixir that analyzes websites to identify the technologies they use.
 
