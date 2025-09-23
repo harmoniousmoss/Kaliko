@@ -2,7 +2,7 @@
 
 # Kaliko - Web Technology Scanner
 
-Kaliko is a beautiful web technology detection platform built with Phoenix/Elixir that analyzes websites to identify the technologies they use. Features a stunning glassmorphism interface with emerald design, real-time scanning, and comprehensive technology detection.
+Kaliko analyzes websites to identify the technologies they use, helping you understand what frameworks, libraries, and tools power any website.
 
 ## ✨ Features
 
